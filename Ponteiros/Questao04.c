@@ -76,6 +76,6 @@ int main() {
   printf("%d \n", *p5);         //Retorna 45, endereço do vetor menos 1
   /* (n) */
   p5++;
-  printf("%d \n", *p5);         //Retorna 27, deslocou no espaço de menoria 1 adiante
+  printf("%d \n", *p5);         //Retorna 27, deslocou no espaço de menoria 1 elemento adiante
   return(0);
 }
