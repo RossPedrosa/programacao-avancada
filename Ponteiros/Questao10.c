@@ -29,4 +29,4 @@ printf("x double:(x+3): %d\n", (v+3));
 }
 
 /* Comparando as responstas com o que foi idealizado na questão anterior,
-    as expectativa foi aceita, porém foi susposto que int ocupa 2 bytes e o tamanho que int ocupa é 4 byte */
+ as expectativa foi aceita, porém foi susposto que int ocupa 2 bytes e o tamanho que int ocupa é 4 byte */
