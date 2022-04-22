@@ -25,7 +25,7 @@ int main()
     printf("Digite o numero de nla, ncl(linha b e coluna a), ncb:\n");
     scanf("%d %d %d", &nla, &ncl, &ncb);
 
-    // aloca matrizes
+    // alocar matrizes
     a = (int **)malloc(nla * sizeof(int *));
     b = (int **)malloc(ncl * sizeof(int *));
     c = (int **)malloc(nla * sizeof(int *));
@@ -41,7 +41,7 @@ int main()
     }
 
 
-    // preencher vetor a,b e a multiplicacao em c;
+    // preencher matrizes a,b e multiplica em c;
     for (i = 0; i < nla; i++){
         for (j = 0; j < ncl; j++){
             a[i][j] = rand() % 10;
@@ -54,7 +54,7 @@ int main()
     }
     multicarM(a, b, c, nla, ncl, ncb);
 
-    // Imprimir vetores
+    // Imprimir matrizes
     printf("\n Matriz A: \n");
     for (i=0; i < nla; i++){
         for(j=0; j<ncl;j++){
