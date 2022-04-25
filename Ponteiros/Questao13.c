@@ -4,7 +4,7 @@
 int main()
 {
   int i, j, n;
-  float *v, aux, aux1;
+  float *v, aux;
 
   printf("Digite a quantidade de elementos:");
   scanf("%d", &n);
