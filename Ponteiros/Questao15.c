@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-float mycompare(float a, float b)                      // Funcao para comparar os elementos.
+float mycompare(float a, float b) // Funcao para comparar os elementos.
 {
     if (a < b)
     {
@@ -17,7 +17,7 @@ float mycompare(float a, float b)                      // Funcao para comparar o
     }
 }
 
-void ordenar(float *v, int n, float(mycompare)(float, float)) // Funcao para ordenar os elementos
+void myqsort(float *v, int n, float(mycompare)(float, float)) // Funcao para ordenar os elementos
 {
     int i, j;
     float aux;
@@ -26,7 +26,7 @@ void ordenar(float *v, int n, float(mycompare)(float, float)) // Funcao para ord
     {
         for (j = 0; j < n; j++)
         {
-            if (mycompare(v[j], v[i]) == 1)
+            if (mycompare(v[j], v[i])==1)
             {
                 aux = v[i];
                 v[i] = v[j];
@@ -44,34 +44,31 @@ int main()
     printf("Digite a quantidade de elementos:");
     scanf("%d", &n);
 
-    v = (float *)malloc(n * sizeof(float));         // Alocando o vetor de n digitos
+    v = (float *)malloc(n * sizeof(float)); // Alocando o vetor de n digitos
 
     for (i = 0; i < n; i++)
     {
-        v[i] = (float)(rand()%100/.55);             //Recebe os elementos do vetor aleatorio
-        //printf("Digite o elemento %d :", i);      // Recebe os elementos do vetor pelo usuário
+        v[i] = (float)((rand() % 10) / .55);
+       // printf("Digite o elemento %d :", i); // Recebe os elementos do vetor pelo usuário
         //scanf("%f", &v[i]);
     }
-    printf("Seu vetor:");                           // Imprimir vetor digitado
+    printf("Seu vetor:"); // Imprimir vetor digitado
     for (i = 0; i < n; i++)
     {
         printf("%g ", v[i]);
     }
     printf("\n");
 
-   
+    //float (*myc)(float) = mycompare; // Declara ponteiro para funcao
+    myqsort(v, n, mycompare);              // Chamada da funcao ordenar, com ponteiro para funcao de comparar
 
-    float (*myc)(float) = mycompare;               // Declara ponteiro para funcao
-    ordenar(v, n, myc);                            //Chamada da funcao ordenar, com ponteiro para funcao de comparar
-
-
-    printf("Vetor ordenado:");                      // Imprimir vetor ordenado
+    printf("Vetor ordenado:"); // Imprimir vetor ordenado
     for (i = 0; i < n; i++)
     {
         printf("%f ", v[i]);
     }
     printf("\n");
 
-    free(v);                                        // libera a memoria do vetor 
+    free(v); // libera a memoria do vetor
     return (0);
 }
